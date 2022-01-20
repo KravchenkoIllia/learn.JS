@@ -1,14 +1,7 @@
-function Accumulator(startingValue){
-    this.value = startingValue;
-    this.read = function(){
-        this.value += + prompt("Your number", 0);
-    };
-
-}
-
-let accumulator = new Accumulator(1);
-
-accumulator.read(); 
-accumulator.read(); 
-
-alert(accumulator.value); 
+function randomInteger(min, max) {
+    // случайное число от min до (max+1)
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+  }
+  
+  alert( randomInteger(1, 3) );
