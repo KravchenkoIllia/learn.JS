@@ -1,7 +1,9 @@
-function randomInteger(min, max) {
-    // случайное число от min до (max+1)
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
+function truncate(str, maxlength){
+  if (str.lenght > maxlength){
+    alert(str.slice(0, maxlength - 1));
+  } else {
+    alert (str);
   }
-  
-  alert( randomInteger(1, 3) );
+}
+
+truncate("Вот, что мне хотелось бы сказать на эту тему:", 20);
