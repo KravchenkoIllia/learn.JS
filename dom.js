@@ -23,3 +23,23 @@ console.log(elemesTree);
 //Поиск по тегу первого уровня вложенности
 const elemesFour = document.querySelectorAll('.leasson__list>li')
 console.log(elemesFour);
+
+//Поиск по нескольким класам
+const elemesFive = document.querySelectorAll('.leasson__list, leasson__text');
+console.log(elemesFive);
+
+//Поиск по вложенным класам
+const elemesSix = document.querySelectorAll('.leasson__list, .leasson__text')
+console.log(elemesSix);
+
+//Поиск по ID
+const elemesSeven = document.querySelectorAll('#listitem')
+console.log(elemesSeven);
+
+//Поиск по атрибуту
+const elemesEight = document.querySelectorAll('[data-item]')
+console.log(elemesEight);
+
+//Поиск по атрибуту со значением
+const elemesNine = document.querySelectorAll('[data-item="85"]')
+console.log(elemesNine);
