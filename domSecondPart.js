@@ -47,3 +47,73 @@ console.log(newElement);
 const newText = document.createTextNode('Hello World');
 console.log(newText);
 
+//Методы вставки
+
+//Вставляем новый элемент
+//перед обьектом textElement.before(newElement);
+//после обьекта textElement.after(newElement);
+//внутрь и в начало обьекта textElement.prepend(newElement);
+//внутрь и в конец обьекта textElement.append(newElement);
+
+/*      before
+<div>
+        prepend
+    <p></p>
+        append
+</div>
+        after
+*/
+
+//insertAdjacentHTML/text/element
+
+//Вставляем текст, HTML, элемент
+
+//Вставляем текст
+textElement.insertAdjacentHTML(
+    'afterend',
+    `<p>The world is mine</p>`
+);
+
+/*  beforbegin вставляет HTML непосредственно перед обьектом
+    afterbegin вставляет HTML в начало обьекта
+    beforend вставляет HTML в конец обьекта
+    afterend вставляет HTML непосредственно после обьекта
+*/
+
+//Наполняем элемент
+newElement.innerHTML = `Never to late`;
+
+//Вставляем элемент
+textElement.insertAdjacentElement(
+    'beforeend',
+    newElement
+)
+
+/*      beforebegin
+<div>
+        afterbegin
+    <p></p>
+        beforend
+</div>
+        afterend
+*/
+
+
+//Перенос элемента
+
+const leassonBlock = document.querySelector('.leasson');
+const title = document.querySelector('h1');
+
+//Переносим title в конец блока leassonBlock
+leassonBlock.append(title);
+
+//Клонирование узлов cloneNode
+
+const cloneTextElement = textElement.cloneNode(true);
+const cloneLessonBlock = document.querySelector('.leasson');
+cloneLessonBlock.append(cloneTextElement);
+
+//Удаление узлов
+
+textElement.remove();
+
