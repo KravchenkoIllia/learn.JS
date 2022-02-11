@@ -76,7 +76,7 @@ textElement.insertAdjacentHTML(
 
 /*  beforbegin вставляет HTML непосредственно перед обьектом
     afterbegin вставляет HTML в начало обьекта
-    beforend вставляет HTML в конец обьекта
+    beforeend вставляет HTML в конец обьекта
     afterend вставляет HTML непосредственно после обьекта
 */
 
@@ -93,7 +93,7 @@ textElement.insertAdjacentElement(
 <div>
         afterbegin
     <p></p>
-        beforend
+        beforeend
 </div>
         afterend
 */
