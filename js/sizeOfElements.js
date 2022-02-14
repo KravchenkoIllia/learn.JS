@@ -39,3 +39,61 @@ function setScrollBy(){
     const windowScrollTop = window.pageYOffset;
     console.log(windowScrollTop);
 }
+
+//Метод scrollTo прокручивает страницу на абсолюные координаты
+//Тоже самое что и window.scroll()
+
+function setScrollTo() {
+    window.scrollTo(0, 50);
+    const windowScrollTop = window.pageYOffset;
+    console.log(windowScrollTop);
+}
+
+function setScrollToOptions() {
+    window.scrollTo({
+        top: 500,
+        left: 0,
+        //smooth, instant, auto
+        behavior: "smooth"
+    });
+}
+
+/*
+Вызов elem.scrollIntoView(top) прокручивает страницу чтобы elem 
+оказался вверху. У него есть один аргумент.
+- если top = true(по умолчанию) то страница будет прокручена, чтобы
+elem появился в верхней части окна
+Верхний край элемента совмещен с верхней частью окна.
+- если top = false то странца будет прокручена чтобы elem появился
+внизу. Нижний край элемента будет совмещен с нижним краем окна.
+*/
+
+function setScrollIntoView(top) {
+    const lessonSelected = document.querySelector('.lesson__selected');
+    lessonSelected.scrollIntoView(top);
+}
+
+function setScrollIntoViewOptions(top) {
+    const lessonSelected = document.querySelector('.lesson__selected');
+    lessonSelected.scrollIntoView({
+        //start, (center), end, nearest
+        block: "center",
+        //start, center, end, (nearest)
+        inline: "nearest",
+        //(auto), smooth
+        behavior: "smooth"
+    });
+}
+
+//Запрет прокрутки
+
+function setEnableDisableScroll() {
+    //document.body.style.overflow = "hidden";
+    document.body.classList.toggle('scroll-lock');
+}
+
+/*
+Для прокрутки страницы из JS ее DOM должен быть полность построен
+Например, если мы попытаемся прокрутить страницу из скрипта в <head>.Это не сработает
+*/
+
