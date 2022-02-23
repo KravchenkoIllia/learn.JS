@@ -14,13 +14,13 @@ JS может реагировать на действи пользовател�
 
 const button = document.querySelector('.button');
 
-// button.onclick = function () {
-//     console.log('Click');
-// }
+button.onclick = function () {
+    console.log('Click');
+}
 
-// function showConsole() {
-//     console.log('CLick');
-// }
+function showConsole() {
+    console.log('CLick');
+}
 
 //button.onclick = showConsole; //Без круглых скобок
 
@@ -45,7 +45,7 @@ button.addEventListener("click", function (e) {
 function showConsole() {
     console.log('Click1');
 }
-//button.removeEventListener("click", showConsole);
+button.removeEventListener("click", showConsole);
 
 //Опции
 
@@ -56,3 +56,24 @@ const options = {
 }
 
 button.addEventListener("click", showConsole, options);
+
+//Обьект события
+/*
+Что бы хорошо обработать событие, могут понадобится детали того что произошло. Не просто клик или нажатие
+а так же какие координаты указателя мыши, какая клавиша нажата и так далее.
+Когда происходит событие, браузер создает обьект события, записывает в него детали и передает его 
+в качестве аргумента функции - обработчику
+*/
+
+function showConsole(event) {
+    console.log(event.type); //Тип события
+    console.log(event.target); //Обьект на котором сработал обработчик
+    console.log(event.currentTarget); //Обьект к которому назначен обработчик
+    console.log(event.clientX); //Положение курсора по оси х
+    console.log(event.clientY); //Положение курсора по оси y
+    console.log(event); //Все детали события
+}
+button.addEventListener("click", showConsole);
+button.addEventListener("mouseenter", showConsole);
+
+
